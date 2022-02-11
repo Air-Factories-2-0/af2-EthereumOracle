@@ -1,5 +1,5 @@
 # af2-EthereumOracle
-Oracle created to contact the printing validation service on Hyperledger Fabric Blockchain
+Oracle created to contact the printing validation service on Hyperledger Fabric Blockchain;
 1° oracle-onchain
 
 [Install]
