@@ -1,0 +1,17 @@
+{
+  "name": "api-provider",
+  "version": "1.0.0",
+  "description": "api provider",
+  "main": "src/api.mjs",
+  "dependencies": {
+    "coingecko-api": "^1.0.10",
+    "dotenv": "^10.0.0",
+    "web3": "^1.7.0",
+    "node-fetch": "^3.2.0"
+  },
+  "scripts": {
+    "start": "node src/oracle.mjs"
+  },
+  "author": "Roberto Marzullo",
+  "license": "ISC"
+}
