@@ -36,11 +36,12 @@
 -npm install web3
 
 ### Modifiche
-{.env}
+#### .env
 
 -Sostituire la PK con la private key del wallet
 
-### src/config.mjs
+#### src/config.mjs
+
 -Address: inserire l'address del contratto dell'oracolo
 
 -Abi: inserire l'abi dopo che il contratto è stato verificato (prenderla da etherscan)
