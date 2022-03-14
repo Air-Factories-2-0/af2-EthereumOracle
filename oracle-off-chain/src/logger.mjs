@@ -1,10 +1,7 @@
 import { updatedRequest, newRequest } from "./middleware.mjs";
 
-
-
 export const initLog = () => {
 
-    //logs id block and url
     newRequest((error, result) => {
         console.log(">>> New Request Data Event On Smart Contract");
         console.log("Block Number: " + result.blockNumber)
@@ -13,7 +10,7 @@ export const initLog = () => {
         console.log("   URL_TO_QUERY: " + result.returnValues[1] + result.returnValues[2]);
         console.log("\n");
     });
-    //logs id block url and value
+
     updatedRequest((error, result) => {
         console.log(">>> Update Request Data Event On Smart Contract");
         console.log("Block Number: " + result.blockNumber)
