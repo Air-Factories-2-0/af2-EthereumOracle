@@ -1,6 +1,6 @@
 # 1° oracle-onchain
 
-### Install
+## Install
 -npm install
 
 -npm install -g truffle
@@ -10,11 +10,11 @@
 ### Modifiche da fare prima del compile
 {.env}
 
--Sostituire MNEMONIC con quella personale del wallet
+-Inserire nel campo MNEMONIC la MNEMONIC del wallet
 
 {Oracle.sol}
 
--Inserire dentro address l'address del wallet
+-Inserire nel campo address l'address del wallet
 
 
 ### Compile
@@ -38,7 +38,7 @@
 ### Modifiche
 #### .env
 
--Sostituire la PK con la private key del wallet
+-Inserire nel campo PK la private key del wallet
 
 #### src/config.mjs
 
@@ -48,3 +48,6 @@
 
 ### Compile
 Run start dal package.json
+
+## Ulteriori modifiche
+Creare un nodo su infura (rinkeby) e sostituire le infura key nei due file di .env
