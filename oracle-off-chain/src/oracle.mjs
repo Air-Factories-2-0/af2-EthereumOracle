@@ -1,4 +1,4 @@
-import { tokensIDs } from "./config.mjs";
+import { fetchedUrl } from "./config.mjs";
 import { newRequest, updateRequest, createRequest } from "./middleware.mjs";
 import { parseData, error, restart } from "./utils.mjs";
 import { initLog } from "./logger.mjs";
@@ -22,9 +22,9 @@ export const processor = () => {
 // Perpetually create a enqueued Oracle Requests
 const client = () => {
 
-    // Fetching Price API Url and Params
-    let urlToQuery = 'https://api.coingecko.com/api/v3/simple/price';
-    let attributeToFetch = '?ids='+tokensIDs[0]+','+tokensIDs[0]+'&vs_currencies=usd';
+    // Fetching API Url and Params
+    let urlToQuery = fetchedUrl.urlToQuery
+    let attributeToFetch = fetchedUrl.attributeToFetch;
 
     // First Processor Execution
     processor();
@@ -34,7 +34,8 @@ const client = () => {
         attributeToFetch
     })
         .then(restart)
-        .catch(error);
+        .catch(error)
+
 };
 
 // Init Execution Stack

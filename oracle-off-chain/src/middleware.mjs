@@ -8,8 +8,6 @@ const account = web3.eth.accounts.privateKeyToAccount( process.env.ACCOUNT_PK );
 web3.eth.accounts.wallet.add(account);
 const contract = await new web3.eth.Contract( onChainOracle.abi, onChainOracle.address);
 
-
-//Create the new request with the url and the attribute
 export const createRequest = async ({ urlToQuery, attributeToFetch }) => {
 
     let estimateGas = await contract.methods.createRequest(urlToQuery, attributeToFetch).estimateGas({from: account.address});
@@ -24,7 +22,6 @@ export const createRequest = async ({ urlToQuery, attributeToFetch }) => {
     });
 }
 
-//Perform the request and return id and value
 export const updateRequest = async ({ id, valueRetrieved }) => {
 
     let estimateGas = await contract.methods.updateRequest(id, valueRetrieved).estimateGas({from: account.address});
@@ -39,12 +36,10 @@ export const updateRequest = async ({ id, valueRetrieved }) => {
     });
 };
 
-//New request event
 export const newRequest = (callback) => {
     contract.events.NewRequest((error, result) => callback(error, result));
 };
 
-//Update request event
 export const updatedRequest = (callback) => {
     contract.events.UpdatedRequest((error, result) => callback(error, result));
 };
